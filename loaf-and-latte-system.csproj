@@ -123,6 +123,12 @@
     <Compile Include="Components\Buttons\ButtonSidebar1.Designer.cs">
       <DependentUpon>ButtonSidebar1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Carts\CartProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Carts\CartProduct.Designer.cs">
+      <DependentUpon>CartProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Config\DatabaseConnection.cs" />
     <Compile Include="Factories\UserFactory.cs" />
     <Compile Include="Form1.cs">
@@ -141,6 +147,7 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Services\LoginService.cs" />
     <Compile Include="UI\Admin\AdminDashboardForm.cs">
       <SubType>Form</SubType>
@@ -160,6 +167,9 @@
     <Compile Include="UI\Staff\StaffDashboardForm.Designer.cs">
       <DependentUpon>StaffDashboardForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Components\Carts\CartProduct.resx">
+      <DependentUpon>CartProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,7 +206,6 @@
   <ItemGroup>
     <Folder Include="Decorators\" />
     <Folder Include="Observers\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\avatar.png" />
