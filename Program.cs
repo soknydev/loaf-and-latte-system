@@ -19,6 +19,7 @@ namespace loaf_and_latte_system
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
             testDatabaseConnection(); // Call the test function here
+            Application.Run(new UI.LoginForm()); // Start the application with the LoginForm
         }
 
         static void testDatabaseConnection()
