@@ -1,14 +1,9 @@
 ﻿using loaf_and_latte_system.Factories.LoafAndLatteSystem.Factories;
 using LoafAndLatteSystem.Services;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using loaf_and_latte_system.UI.Admin;
+using loaf_and_latte_system.UI.Staff;
 
 namespace loaf_and_latte_system.UI
 {
@@ -42,13 +37,15 @@ namespace loaf_and_latte_system.UI
 
                 if (user.Role == "Admin")
                 {
-                    //new AdminDashboardForm(user).Show(); // You create this form
-                    MessageBox.Show("Admin Dashboard is not implemented yet.");
+                    AdminDashboardForm adminDashboard = new AdminDashboardForm();
+                    adminDashboard.Show();
+                    //MessageBox.Show("Admin Dashboard is not implemented yet.");
                 }
                 else if (user.Role == "Staff")
                 {
-                    //new StaffDashboardForm(user).Show(); // You create this form
-                    MessageBox.Show("Staff Dashboard is not implemented yet.");
+                    StaffDashboardForm staffDashboard = new StaffDashboardForm();
+                    staffDashboard.Show();
+                    //MessageBox.Show("Staff Dashboard is not implemented yet.");
                 }
             }
             else
