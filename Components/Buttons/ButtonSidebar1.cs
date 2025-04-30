@@ -1,24 +1,20 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing;
 using System.Windows.Forms;
 
-namespace bakery_management_system.components
+namespace loaf_and_latte_system.Components.Buttons
 {
-    public partial class ButtonWithBorder : Button
+    public partial class ButtonSidebar1 : Button
     {
-        // Fields
+        //Fields
         private int borderSize = 0;
         private int borderRadius = 10;
         private Color borderColor = Color.PaleVioletRed;
-        private Color hoverBackgroundColor;
-        private Color hoverTextColor = Color.White; // Text becomes white on hover
-        private Color originalBackgroundColor;
-        private Color originalTextColor;
 
-        // Properties
-        [Category("Custom Properties")]
+        //Properties
+        [Category("RJ Code Advance")]
         public int BorderSize
         {
             get { return borderSize; }
@@ -29,7 +25,7 @@ namespace bakery_management_system.components
             }
         }
 
-        [Category("Custom Properties")]
+        [Category("RJ Code Advance")]
         public int BorderRadius
         {
             get { return borderRadius; }
@@ -40,7 +36,7 @@ namespace bakery_management_system.components
             }
         }
 
-        [Category("Custom Properties")]
+        [Category("RJ Code Advance")]
         public Color BorderColor
         {
             get { return borderColor; }
@@ -51,80 +47,47 @@ namespace bakery_management_system.components
             }
         }
 
-        [Category("Custom Properties")]
+        [Category("RJ Code Advance")]
         public Color BackgroundColor
         {
             get { return this.BackColor; }
-            set
-            {
-                this.BackColor = value;
-                originalBackgroundColor = value; // Store the original background color
-            }
+            set { this.BackColor = value; }
         }
 
-        [Category("Custom Properties")]
+        [Category("RJ Code Advance")]
         public Color TextColor
         {
             get { return this.ForeColor; }
-            set
-            {
-                this.ForeColor = value;
-                originalTextColor = value; // Store the original text color
-            }
+            set { this.ForeColor = value; }
         }
 
-        [Category("Custom Properties")]
-        public Color HoverBackgroundColor
-        {
-            get { return hoverBackgroundColor; }
-            set { hoverBackgroundColor = value; }
-        }
-
-        [Category("Custom Properties")]
-        public Color HoverTextColor
-        {
-            get { return hoverTextColor; }
-            set { hoverTextColor = value; }
-        }
-
-        // Constructor
-        public ButtonWithBorder()
+        //Constructor
+        //Constructor
+        public ButtonSidebar1()
         {
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
             this.Size = new Size(150, 40);
-            this.BackColor = Color.FromArgb(255, 101, 0); // Default background color
-            this.ForeColor = Color.White; // Default text color
-            originalBackgroundColor = this.BackColor;
-            originalTextColor = this.ForeColor;
 
-            hoverBackgroundColor = Color.FromArgb(255, 101, 0); // Default hover color
-            hoverTextColor = Color.White; // Default hover text color
+            // Set background color to match the default control color
+            this.BackColor = SystemColors.Control;
 
+            // Set text color to black
+            this.ForeColor = Color.Black;
+
+            // Set font to "Segoe UI SemiBold" if available
             this.Font = new Font("Segoe UI SemiBold", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            this.Padding = new Padding(15, 8, 15, 8);
 
-            this.Resize += Button_Resize;
+            // Align text to the left
+            this.TextAlign = ContentAlignment.MiddleLeft;
 
-            // Attach hover events
-            this.MouseEnter += ButtonWithBorder_MouseEnter;
-            this.MouseLeave += ButtonWithBorder_MouseLeave;
+            this.Padding = new Padding(15, 5, 30, 5);
         }
 
-        // Hover logic
-        private void ButtonWithBorder_MouseEnter(object sender, EventArgs e)
-        {
-            this.BackColor = hoverBackgroundColor; // Change background color on hover
-            this.ForeColor = hoverTextColor;       // Change text color on hover
-        }
 
-        private void ButtonWithBorder_MouseLeave(object sender, EventArgs e)
-        {
-            this.BackColor = originalBackgroundColor; // Restore original background color
-            this.ForeColor = originalTextColor;       // Restore original text color
-        }
 
-        // Methods
+
+        //Methods
         private GraphicsPath GetFigurePath(Rectangle rect, int radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -149,7 +112,7 @@ namespace bakery_management_system.components
             if (borderSize > 0)
                 smoothSize = borderSize;
 
-            if (borderRadius > 2) // Rounded button
+            if (borderRadius > 2) //Rounded button
             {
                 using (GraphicsPath pathSurface = GetFigurePath(rectSurface, borderRadius))
                 using (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius - borderSize))
@@ -157,23 +120,23 @@ namespace bakery_management_system.components
                 using (Pen penBorder = new Pen(borderColor, borderSize))
                 {
                     pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                    // Button surface
+                    //Button surface
                     this.Region = new Region(pathSurface);
-                    // Draw surface border for HD result
+                    //Draw surface border for HD result
                     pevent.Graphics.DrawPath(penSurface, pathSurface);
 
-                    // Button border                    
+                    //Button border                    
                     if (borderSize >= 1)
-                        // Draw control border
+                        //Draw control border
                         pevent.Graphics.DrawPath(penBorder, pathBorder);
                 }
             }
-            else // Normal button
+            else //Normal button
             {
                 pevent.Graphics.SmoothingMode = SmoothingMode.None;
-                // Button surface
+                //Button surface
                 this.Region = new Region(rectSurface);
-                // Button border
+                //Button border
                 if (borderSize >= 1)
                 {
                     using (Pen penBorder = new Pen(borderColor, borderSize))
@@ -188,8 +151,7 @@ namespace bakery_management_system.components
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
-            if (this.Parent != null)
-                this.Parent.BackColorChanged += Container_BackColorChanged;
+            this.Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
         }
 
         private void Container_BackColorChanged(object sender, EventArgs e)

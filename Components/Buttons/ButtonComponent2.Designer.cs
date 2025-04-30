@@ -1,4 +1,4 @@
-﻿namespace loaf_and_latte_system.Components.Button
+﻿namespace loaf_and_latte_system.Components.Buttons
 {
     partial class ButtonComponent2
     {

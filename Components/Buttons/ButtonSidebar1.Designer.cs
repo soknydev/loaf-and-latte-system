@@ -1,6 +1,6 @@
-﻿namespace bakery_management_system.components
+﻿namespace loaf_and_latte_system.Components.Buttons
 {
-    partial class ButtonComponent1
+    partial class ButtonSidebar1
     {
         /// <summary>
         /// Required designer variable.
@@ -11,14 +11,14 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing && (components != null))
-        //    {
-        //        components.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
         #region Component Designer generated code
 

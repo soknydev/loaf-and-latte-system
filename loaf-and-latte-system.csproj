@@ -2,7 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <LangVersion>9.0</LangVersion>
+    <LangVersion>10.0</LangVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5F710D33-0397-4621-A6B3-E68ADD98F752}</ProjectGuid>
@@ -99,17 +99,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\Button\ButtonComponent.cs">
+    <Compile Include="Components\Buttons\ButtonComponent1.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Components\Button\ButtonComponent.Designer.cs">
-      <DependentUpon>ButtonComponent.cs</DependentUpon>
+    <Compile Include="Components\Buttons\ButtonComponent1.Designer.cs">
+      <DependentUpon>ButtonComponent1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Button\ButtonWithBorder.cs">
+    <Compile Include="Components\Buttons\ButtonComponent2.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Components\Button\ButtonWithBorder.Designer.cs">
-      <DependentUpon>ButtonWithBorder.cs</DependentUpon>
+    <Compile Include="Components\Buttons\ButtonComponent2.Designer.cs">
+      <DependentUpon>ButtonComponent2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Buttons\ButtonSidebar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Buttons\ButtonSidebar.Designer.cs">
+      <DependentUpon>ButtonSidebar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Buttons\ButtonSidebar1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Buttons\ButtonSidebar1.Designer.cs">
+      <DependentUpon>ButtonSidebar1.cs</DependentUpon>
     </Compile>
     <Compile Include="Config\DatabaseConnection.cs" />
     <Compile Include="Factories\UserFactory.cs" />
@@ -159,6 +171,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\Admin\AdminDashboardForm.resx">
       <DependentUpon>AdminDashboardForm.cs</DependentUpon>
@@ -184,6 +197,36 @@
     <Folder Include="Decorators\" />
     <Folder Include="Observers\" />
     <Folder Include="Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\avatar.png" />
+    <Content Include="Resources\bakery1.jpg" />
+    <Content Include="Resources\bakery\bread\banana.png" />
+    <Content Include="Resources\bakery\bread\brioche.png" />
+    <Content Include="Resources\bakery\bread\challah.png" />
+    <Content Include="Resources\bakery\bread\croissant.png" />
+    <Content Include="Resources\bakery\bread\Panattone.png" />
+    <Content Include="Resources\bakery\bread\Panettone.png" />
+    <Content Include="Resources\bakery\bread\stollen.png" />
+    <Content Include="Resources\bakery\cake\chocolate-cake.png" />
+    <Content Include="Resources\bakery\cake\coconut.png" />
+    <Content Include="Resources\bakery\cake\red velvet.png" />
+    <Content Include="Resources\bakery\cake\vanilla.png" />
+    <Content Include="Resources\bakery\donut\chocolate-donut.png" />
+    <Content Include="Resources\bakery\donut\cinnamon.png" />
+    <Content Include="Resources\bakery\donut\donut.png" />
+    <Content Include="Resources\bms.png" />
+    <Content Include="Resources\bun-8447394_640 - Copy %282%29.jpg" />
+    <Content Include="Resources\bun-8447394_640.jpg" />
+    <Content Include="Resources\default_product_image.jpg" />
+    <Content Include="Resources\edit.png" />
+    <Content Include="Resources\kimlang.jpg" />
+    <Content Include="Resources\Mobile login.gif" />
+    <Content Include="Resources\photo_2023-08-01_20-25-42.jpg" />
+    <Content Include="Resources\seyha.jpg" />
+    <Content Include="Resources\sokny002.jpg" />
+    <Content Include="Resources\sokny01.jpg" />
+    <Content Include="Resources\Tablet login.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
