@@ -236,6 +236,7 @@
     <Content Include="Resources\sokny002.jpg" />
     <Content Include="Resources\sokny01.jpg" />
     <Content Include="Resources\Tablet login.gif" />
+    <None Include="Resources\trash.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -16,10 +16,7 @@ namespace loaf_and_latte_system.UI.Controls
         public void SetProductData(Product product)
         {
             lblName.Text = $"{product.Name}";
-            lblDescription.Text = $"{product.Description}";
             lblPrice.Text = $"{product.Price}";
-            lblStock.Text = $"{product.StockLevel}";
-            lblAvailable.Text = $"{(product.IsAvailable ? "Yes" : "No")}";
 
             // Load image if path exists
             if (!string.IsNullOrEmpty(product.ImagePath) && File.Exists(product.ImagePath))

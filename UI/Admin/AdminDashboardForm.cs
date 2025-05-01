@@ -12,6 +12,11 @@ namespace loaf_and_latte_system.UI.Admin
         public AdminDashboardForm()
         {
             InitializeComponent();
+
+
+
+
+
             this.WindowState = FormWindowState.Maximized;
             LoadProducts();
         }
