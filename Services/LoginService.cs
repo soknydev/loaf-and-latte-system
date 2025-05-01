@@ -1,5 +1,6 @@
 ﻿using loaf_and_latte_system.Config;
 using loaf_and_latte_system.Factories.LoafAndLatteSystem.Factories;
+using loaf_and_latte_system.Util;
 using MySql.Data.MySqlClient;
 using System;
 
@@ -27,6 +28,7 @@ namespace LoafAndLatteSystem.Services
                         user.Username = username;
                         user.SetPermissions();
                         return user;
+                       
                     }
                 }
 

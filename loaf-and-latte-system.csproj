@@ -167,6 +167,7 @@
     <Compile Include="UI\Staff\StaffDashboardForm.Designer.cs">
       <DependentUpon>StaffDashboardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util\UserSession.cs" />
     <EmbeddedResource Include="Components\Carts\CartProduct.resx">
       <DependentUpon>CartProduct.cs</DependentUpon>
     </EmbeddedResource>

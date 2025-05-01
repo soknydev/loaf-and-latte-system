@@ -30,14 +30,14 @@
         {
             this.lblName = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.buttonComponent11 = new loaf_and_latte_system.Components.Buttons.ButtonComponent1();
-            this.buttonss = new loaf_and_latte_system.Components.Buttons.ButtonComponent1();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnAddToCart = new loaf_and_latte_system.Components.Buttons.ButtonComponent1();
+            this.pictureBoxUpdate = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDelete = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUpdate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete)).BeginInit();
             this.SuspendLayout();
             // 
             // lblName
@@ -61,26 +61,6 @@
             this.lblPrice.TabIndex = 3;
             this.lblPrice.Text = "label1333";
             this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::loaf_and_latte_system.Properties.Resources.trash;
-            this.pictureBox2.Location = new System.Drawing.Point(265, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(43, 39);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::loaf_and_latte_system.Properties.Resources.edit;
-            this.pictureBox1.Location = new System.Drawing.Point(211, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 39);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
             // 
             // pictureBox
             // 
@@ -112,25 +92,46 @@
             this.buttonComponent11.TextColor = System.Drawing.Color.White;
             this.buttonComponent11.UseVisualStyleBackColor = false;
             // 
-            // buttonss
+            // btnAddToCart
             // 
-            this.buttonss.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(101)))), ((int)(((byte)(0)))));
-            this.buttonss.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(101)))), ((int)(((byte)(0)))));
-            this.buttonss.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.buttonss.BorderRadius = 10;
-            this.buttonss.BorderSize = 0;
-            this.buttonss.FlatAppearance.BorderSize = 0;
-            this.buttonss.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonss.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
-            this.buttonss.ForeColor = System.Drawing.Color.White;
-            this.buttonss.Location = new System.Drawing.Point(14, 324);
-            this.buttonss.Name = "buttonss";
-            this.buttonss.Padding = new System.Windows.Forms.Padding(15, 8, 15, 8);
-            this.buttonss.Size = new System.Drawing.Size(167, 54);
-            this.buttonss.TabIndex = 10;
-            this.buttonss.Text = "Add to cart";
-            this.buttonss.TextColor = System.Drawing.Color.White;
-            this.buttonss.UseVisualStyleBackColor = false;
+            this.btnAddToCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(101)))), ((int)(((byte)(0)))));
+            this.btnAddToCart.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(101)))), ((int)(((byte)(0)))));
+            this.btnAddToCart.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAddToCart.BorderRadius = 10;
+            this.btnAddToCart.BorderSize = 0;
+            this.btnAddToCart.FlatAppearance.BorderSize = 0;
+            this.btnAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddToCart.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
+            this.btnAddToCart.ForeColor = System.Drawing.Color.White;
+            this.btnAddToCart.Location = new System.Drawing.Point(14, 324);
+            this.btnAddToCart.Name = "btnAddToCart";
+            this.btnAddToCart.Padding = new System.Windows.Forms.Padding(15, 8, 15, 8);
+            this.btnAddToCart.Size = new System.Drawing.Size(167, 54);
+            this.btnAddToCart.TabIndex = 10;
+            this.btnAddToCart.Text = "Add to cart";
+            this.btnAddToCart.TextColor = System.Drawing.Color.White;
+            this.btnAddToCart.UseVisualStyleBackColor = false;
+            this.btnAddToCart.Click += new System.EventHandler(this.btnAddToCart_Click);
+            // 
+            // pictureBoxUpdate
+            // 
+            this.pictureBoxUpdate.Image = global::loaf_and_latte_system.Properties.Resources.edit;
+            this.pictureBoxUpdate.Location = new System.Drawing.Point(211, 6);
+            this.pictureBoxUpdate.Name = "pictureBoxUpdate";
+            this.pictureBoxUpdate.Size = new System.Drawing.Size(43, 39);
+            this.pictureBoxUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxUpdate.TabIndex = 8;
+            this.pictureBoxUpdate.TabStop = false;
+            // 
+            // pictureBoxDelete
+            // 
+            this.pictureBoxDelete.Image = global::loaf_and_latte_system.Properties.Resources.trash;
+            this.pictureBoxDelete.Location = new System.Drawing.Point(265, 6);
+            this.pictureBoxDelete.Name = "pictureBoxDelete";
+            this.pictureBoxDelete.Size = new System.Drawing.Size(43, 39);
+            this.pictureBoxDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxDelete.TabIndex = 9;
+            this.pictureBoxDelete.TabStop = false;
             // 
             // ProductCard
             // 
@@ -138,18 +139,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Controls.Add(this.buttonComponent11);
-            this.Controls.Add(this.buttonss);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnAddToCart);
+            this.Controls.Add(this.pictureBoxDelete);
+            this.Controls.Add(this.pictureBoxUpdate);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblName);
             this.Margin = new System.Windows.Forms.Padding(10);
             this.Name = "ProductCard";
             this.Size = new System.Drawing.Size(326, 408);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUpdate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,9 +160,9 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private Components.Buttons.ButtonComponent1 buttonss;
+        private Components.Buttons.ButtonComponent1 btnAddToCart;
         private Components.Buttons.ButtonComponent1 buttonComponent11;
+        private System.Windows.Forms.PictureBox pictureBoxUpdate;
+        private System.Windows.Forms.PictureBox pictureBoxDelete;
     }
 }
